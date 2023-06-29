@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; --foreground: 222 47% 11%; --card: 0 0% 100%; --card-foreground: 222 47% 11%;
+    --primary: 190 95% 35%; --primary-foreground: 0 0% 100%; --secondary: 216 32% 92%; --secondary-foreground: 222 47% 11%;
+    --muted: 216 32% 92%; --muted-foreground: 215 16% 47%; --accent: 190 80% 90%; --accent-foreground: 190 95% 20%;
+    --border: 214 32% 91%; --input: 214 32% 91%; --ring: 190 95% 35%; --radius: 1rem;
+  }
+  .dark {
+    --background: 222 47% 6%; --foreground: 210 40% 98%; --card: 222 47% 9%; --card-foreground: 210 40% 98%;
+    --primary: 188 86% 45%; --primary-foreground: 222 47% 6%; --secondary: 217 33% 18%; --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 18%; --muted-foreground: 215 20% 65%; --accent: 190 60% 16%; --accent-foreground: 188 86% 75%;
+    --border: 217 33% 18%; --input: 217 33% 18%; --ring: 188 86% 45%;
+  }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; }
+}
+
+.viewer-grid { background-image: linear-gradient(rgba(20,184,166,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(20,184,166,.12) 1px, transparent 1px); background-size: 32px 32px; }
