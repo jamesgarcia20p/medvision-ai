@@ -1,0 +1,93 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Modality {
+  CT
+  MRI
+  PET
+  XRAY
+}
+
+enum StudyStatus {
+  queued
+  processing
+  review
+  completed
+}
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  studies   Study[]
+}
+
+model Study {
+  id            String        @id @default(cuid())
+  patientName   String
+  patientMrn    String
+  modality      Modality
+  bodyPart      String
+  studyDate     DateTime
+  status        StudyStatus   @default(queued)
+  aiConfidence  Int           @default(0)
+  tumorVolumeMl Float?
+  seriesCount   Int           @default(1)
+  ownerId       String
+  owner         User          @relation(fields: [ownerId], references: [id])
+  series        Series[]
+  annotations   Annotation[]
+  segmentations Segmentation[]
+  reports       Report[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Series {
+  id          String   @id @default(cuid())
+  studyId     String
+  study       Study    @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  description String
+  storageKey  String
+  instanceCount Int
+}
+
+model Annotation {
+  id        String   @id @default(cuid())
+  studyId   String
+  study     Study    @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  label     String
+  tool      String
+  geometry  Json
+  createdAt DateTime @default(now())
+}
+
+model Segmentation {
+  id          String      @id @default(cuid())
+  studyId     String
+  study       Study       @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  modelName   String
+  status      StudyStatus @default(processing)
+  maskKey     String?
+  confidence  Int
+  metrics     Json
+  createdAt   DateTime    @default(now())
+}
+
+model Report {
+  id         String   @id @default(cuid())
+  studyId    String
+  study      Study    @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  summary    String
+  impression String[]
+  createdAt  DateTime @default(now())
+}
