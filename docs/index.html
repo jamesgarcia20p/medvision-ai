@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MedVisionAI interactive showcase: an animated AI medical imaging command center for DICOM, MONAI segmentation, vtk.js reconstruction, and radiology reporting." />
+    <meta name="theme-color" content="#05111f" />
+    <title>MedVisionAI — Interactive Medical Imaging Demo</title>
+    <link rel="preload" href="assets/reference-visual.svg" as="image" />
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <canvas id="particle-field" aria-hidden="true"></canvas>
+    <div class="aurora aurora-one" aria-hidden="true"></div>
+    <div class="aurora aurora-two" aria-hidden="true"></div>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="MedVisionAI home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img"><path d="M16 2.7 27.2 8.9v14.2L16 29.3 4.8 23.1V8.9L16 2.7Zm0 4.9-6.8 3.8v9.2l6.8 3.8 6.8-3.8v-9.2L16 7.6Zm0 3.2a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4Z" /></svg>
+        </span>
+        <span>MedVisionAI</span>
+      </a>
+      <nav class="nav-links" aria-label="Demo sections">
+        <a href="#viewer">Viewer</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#security">Security</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
+        <span class="toggle-orbit" aria-hidden="true"><span class="toggle-core"></span></span>
+        <span class="toggle-label">Dark</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Intelligent medical visualization</p>
+          <h1>AI imaging command center for radiology teams.</h1>
+          <p class="hero-lede">A polished interactive showcase inspired by the provided futuristic visualization reference: DICOM review, MONAI tumor segmentation, 3D anatomy, annotations, reports, and mask exports in one responsive experience.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#viewer">Launch demo viewport</a>
+          </div>
+          <dl class="trust-strip" aria-label="Platform metrics">
+            <div><dt>94%</dt><dd>AI confidence</dd></div>
+            <div><dt>12.8 ml</dt><dd>Mask volume</dd></div>
+            <div><dt>128</dt><dd>DICOM slices</dd></div>
+          </dl>
+        </div>
+
+        <div class="command-console reveal" id="viewer" aria-label="Animated medical imaging console">
+          <div class="console-topline">
+            <span></span><strong>Intelligent medical visualization</strong><span></span>
+          </div>
+          <div class="console-grid">
+            <aside class="console-panel stats-panel">
+              <div class="ring-stat"><span>72</span><small>fps</small></div>
+              <div class="patient-count"><small>Number of outpatients</small><strong>80</strong></div>
+              <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <h2>Statistics</h2>
+              <div class="spark-row green"><span>Rural</span><b>1789</b><svg viewBox="0 0 160 34"><polyline points="0,26 10,22 20,24 30,9 40,26 50,21 60,23 70,5 80,24 90,19 100,25 110,14 120,27 130,22 140,24 150,18" /></svg></div>
+              <div class="spark-row amber"><span>Self-pay</span><b>1680</b><svg viewBox="0 0 160 34"><polyline points="0,27 11,18 22,26 33,11 44,25 55,12 66,24 77,9 88,25 99,15 110,27 121,13 132,25 143,17 154,21" /></svg></div>
+              <div class="ranking-table">
+                <div><strong>Rank</strong><strong>Disease</strong><strong>Volume</strong></div>
+                <div><span>2</span><span>Gastritis</span><span>726</span></div>
+                <div><span>3</span><span>Apoplexy</span><span>690</span></div>
+                <div><span>4</span><span>Malaria</span><span>626</span></div>
+              </div>
+            </aside>
+
+            <section class="anatomy-stage" aria-label="3D anatomical reconstruction preview">
+              <div class="scan-ring ring-a"></div>
+              <div class="scan-ring ring-b"></div>
+              <div class="scan-beam"></div>
+              <svg class="body-wireframe" viewBox="0 0 280 560" role="img" aria-label="Animated human anatomy wireframe">
+                <defs>
+                  <linearGradient id="bodyGlow" x1="0" x2="1"><stop stop-color="#6fffe9"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+                </defs>
+                <circle cx="140" cy="54" r="31" />
+                <path d="M113 91c19 13 35 13 54 0M140 85v105M83 127c39 13 77 13 114 0M80 138 24 164M200 138l56 26M24 164l-14 42M256 164l14 42M113 191l-28 116M167 191l28 116M85 307l-23 146M195 307l23 146M62 453l-19 76M218 453l19 76" />
+                <path class="spine" d="M140 91c-9 24-8 51 0 78 9 29 8 58 0 87-8 31-6 65 0 101" />
+                <path class="organ" d="M104 151c-22 37-16 75 17 89 12-23 12-56-17-89Zm72 0c22 37 16 75-17 89-12-23-12-56 17-89Z" />
+                <ellipse class="lesion" cx="170" cy="214" rx="18" ry="24" />
+                <path d="M88 252c29 26 75 26 104 0M98 284c20 18 64 18 84 0" />
+              </svg>
+              <div class="hologram-base"></div>
+              <div class="floating-chip chip-one">MONAI mask • 91%</div>
+              <div class="floating-chip chip-two">vtk.js mesh ready</div>
+              <div class="floating-chip chip-three">DICOM SEG export</div>
+            </section>
+
+            <aside class="console-panel mechanism-panel">
+              <h2>Mechanism</h2>
+              <div class="site-grid">
+                <span>Village hospital</span><span>Village clinic</span><span>Community center</span><span>Tertiary hospital</span><span>Secondary hospital</span><span>Primary hospital</span>
+              </div>
+              <div class="tool-row" aria-label="Clinical tools"><span>AI</span><span>3D</span><span>♿</span></div>
+              <div class="progress-stack">
+                <label>Inference <b>92%</b><i style="--value: 92%"></i></label>
+                <label>Pixel attribution <b>78%</b><i style="--value: 78%"></i></label>
+                <label>Hospitalization risk <b>66%</b><i style="--value: 66%"></i></label>
+              </div>
+              <div class="bar-chart" aria-label="Hospital evaluation chart"><i style="--h:70%"></i><i style="--h:36%"></i><i style="--h:86%"></i><i style="--h:62%"></i><i style="--h:42%"></i></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell workflow-section" id="workflow">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Full-stack workflow</p>
+          <h2>Designed to feel clinical, fast, and production-aware.</h2>
+          <p>Every card is crafted as part of a static product showcase, with motion tuned for accessibility and enough implementation detail to communicate senior product thinking.</p>
+        </div>
+        <div class="workflow-grid">
+          <article class="workflow-card reveal"><strong>01</strong><h3>Upload & triage</h3><p>DICOM, NIfTI, CT, and MRI intake with patient-study context and visible queue state.</p></article>
+          <article class="workflow-card reveal"><strong>02</strong><h3>AI segmentation</h3><p>MONAI/PyTorch pipeline seam for tumor masks, confidence scoring, and mask exports.</p></article>
+          <article class="workflow-card reveal"><strong>03</strong><h3>Review viewport</h3><p>Cornerstone.js viewer patterns for windowing, measurement, annotation, and overlays.</p></article>
+          <article class="workflow-card reveal"><strong>04</strong><h3>3D reconstruction</h3><p>vtk.js-ready anatomy cards for mesh previews, reconstruction state, and clinical review.</p></article>
+        </div>
+      </section>
+
+      <section class="section-shell security-section" id="security">
+        <div class="glass-card reveal">
+          <p class="eyebrow"><span></span> Responsible demo</p>
+          <h2>Built for demonstration, not diagnosis.</h2>
+          <p>MedVisionAI demonstrates architecture and interaction design for medical imaging workflows. Clinical deployment would require validation, PHI controls, audit logging, de-identification, model governance, and regulatory review.</p>
+        </div>
+        <figure class="reference-card reveal">
+          <img src="assets/reference-visual.svg" alt="Provided futuristic medical visualization design reference used for the MedVisionAI interactive showcase aesthetic." />
+          <figcaption>Design reference translated into a responsive, animated interface with accessible light and dark themes.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-center">
+        <p>© 2023 James Garcia.</p>
+        <p>For demonstration purposes only. <a href="https://github.com/jamesgarcia20p/medvision-ai" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.82c1.02.01 2.04.14 3 .4 2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" /></svg>View Source Code</a></p>
+      </div>
+    </footer>
+
+    <script src="demo.js" defer></script>
+  </body>
+</html>
