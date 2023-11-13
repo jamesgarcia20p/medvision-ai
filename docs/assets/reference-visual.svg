@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Futuristic medical visualization reference artwork</title>
+  <desc id="desc">A dark holographic medical dashboard inspired by the provided reference image, with anatomy, charts, and glowing interface panels.</desc>
+  <defs>
+    <radialGradient id="space" cx="50%" cy="10%" r="75%">
+      <stop offset="0" stop-color="#163c5d"/>
+      <stop offset="0.45" stop-color="#06162a"/>
+      <stop offset="1" stop-color="#020814"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" x2="1">
+      <stop stop-color="#6fffe9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop stop-color="#c9ff68"/>
+      <stop offset="1" stop-color="#38f8c9"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0v42" fill="none" stroke="#6fffe9" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="720" fill="url(#space)"/>
+  <rect width="1200" height="720" fill="url(#grid)"/>
+  <g opacity=".75">
+    <circle cx="142" cy="83" r="2" fill="#9ff"/><circle cx="230" cy="54" r="1.7" fill="#9ff"/><circle cx="957" cy="88" r="2.5" fill="#9ff"/><circle cx="1030" cy="142" r="1.8" fill="#9ff"/>
+    <path d="M142 83 230 54 287 96M957 88l73 54 48-30" fill="none" stroke="#6fffe9" stroke-opacity=".25"/>
+  </g>
+  <g transform="translate(42 72)">
+    <rect x="0" y="0" width="250" height="520" rx="22" fill="#031423" fill-opacity=".68" stroke="#6fffe9" stroke-opacity=".35"/>
+    <text x="26" y="48" fill="#6fffe9" font-family="Inter,Arial" font-weight="900" font-size="28">Statistics</text>
+    <circle cx="61" cy="113" r="36" fill="none" stroke="#6fffe9" stroke-dasharray="4 6" stroke-width="3"/>
+    <text x="39" y="120" fill="#b6ff5c" font-family="Inter,Arial" font-weight="900" font-size="34">72</text>
+    <text x="120" y="128" fill="#b6ff5c" font-family="Inter,Arial" font-weight="900" font-size="72">80</text>
+    <path d="M30 229l18-12 18 8 18-31 18 42 18-28 18 14" fill="none" stroke="#6fffe9" stroke-width="4" filter="url(#glow)"/>
+    <path d="M30 302l18-20 18 14 18-26 18 32 18-28 18 18" fill="none" stroke="#ffd166" stroke-width="4" filter="url(#glow)"/>
+    <rect x="25" y="360" width="200" height="118" rx="14" fill="#082638" stroke="#6fffe9" stroke-opacity=".35"/>
+    <text x="44" y="392" fill="#fff" font-family="Inter,Arial" font-weight="800" font-size="16">Rank</text><text x="98" y="392" fill="#fff" font-family="Inter,Arial" font-weight="800" font-size="16">Disease</text><text x="177" y="392" fill="#fff" font-family="Inter,Arial" font-weight="800" font-size="16">Vol</text>
+    <text x="46" y="425" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">2</text><text x="98" y="425" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">Gastritis</text><text x="183" y="425" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">726</text>
+    <text x="46" y="455" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">3</text><text x="98" y="455" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">Apoplexy</text><text x="183" y="455" fill="#a6c8d8" font-family="Inter,Arial" font-size="15">690</text>
+  </g>
+  <g transform="translate(340 72)">
+    <text x="115" y="16" fill="#b6ff5c" font-family="Inter,Arial" font-weight="900" font-size="20">Intelligent medical visualization</text>
+    <ellipse cx="250" cy="560" rx="170" ry="28" fill="#22d3ee" fill-opacity=".18" stroke="#22d3ee" filter="url(#glow)"/>
+    <circle cx="250" cy="258" r="185" fill="none" stroke="#6fffe9" stroke-opacity=".25"/>
+    <circle cx="250" cy="258" r="135" fill="none" stroke="#6fffe9" stroke-opacity=".18"/>
+    <path d="M250 83v390M112 205c92 25 184 25 276 0M140 445c70 30 150 30 220 0" stroke="#22d3ee" stroke-opacity=".35" fill="none"/>
+    <g filter="url(#glow)" stroke="url(#cyan)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <circle cx="250" cy="92" r="38"/>
+      <path d="M220 142c28 18 55 18 60 0M250 130v165M178 190c50 18 98 18 144 0M175 205 83 248M325 205l92 43M83 248l-22 70M417 248l22 70M220 295l-40 170M280 295l40 170M180 465l-30 88M320 465l30 88"/>
+      <path d="M205 214c-40 65-20 120 30 137 18-42 10-88-30-137Zm90 0c40 65 20 120-30 137-18-42-10-88 30-137Z" fill="#6fffe9" fill-opacity=".06"/>
+    </g>
+    <ellipse cx="292" cy="310" rx="22" ry="30" fill="#ff5b7d" fill-opacity=".35" stroke="#ff7a8a" stroke-width="4" filter="url(#glow)"/>
+    <g fill="#6fffe9" filter="url(#glow)"><circle cx="166" cy="264" r="8"/><circle cx="363" cy="310" r="8"/><circle cx="250" cy="392" r="8"/></g>
+  </g>
+  <g transform="translate(880 72)">
+    <rect x="0" y="0" width="278" height="520" rx="22" fill="#031423" fill-opacity=".7" stroke="#6fffe9" stroke-opacity=".35"/>
+    <text x="28" y="52" fill="#6fffe9" font-family="Inter,Arial" font-weight="900" font-size="28" letter-spacing="6">MECHANISM</text>
+    <g fill="#b6d8e4" font-family="Inter,Arial" font-size="16">
+      <text x="32" y="96">✥ Village hospital</text><text x="32" y="130">✥ Community center</text><text x="32" y="164">✥ Secondary hospital</text>
+      <text x="155" y="96">✥ Village clinic</text><text x="155" y="130">✥ Tertiary hospital</text><text x="155" y="164">✥ Primary hospital</text>
+    </g>
+    <g transform="translate(32 205)" fill="#082f3b" stroke="#6fffe9" stroke-opacity=".35">
+      <rect width="44" height="44"/><rect x="60" width="44" height="44"/><rect x="120" width="44" height="44"/>
+      <text x="12" y="29" fill="#6fffe9" font-family="Inter,Arial" font-weight="900" font-size="20" stroke="none">AI</text><text x="71" y="29" fill="#6fffe9" font-family="Inter,Arial" font-weight="900" font-size="20" stroke="none">3D</text><text x="134" y="29" fill="#6fffe9" font-family="Inter,Arial" font-weight="900" font-size="20" stroke="none">↯</text>
+    </g>
+    <g transform="translate(32 288)" font-family="Inter,Arial" font-size="15" fill="#b6d8e4">
+      <text y="0">Inference</text><text x="185" y="0" fill="#fff" font-weight="900">92%</text><rect y="14" width="215" height="10" rx="5" fill="#0a3041" stroke="#6fffe9" stroke-opacity=".25"/><rect y="14" width="198" height="10" rx="5" fill="url(#green)"/>
+      <text y="55">Pixel attribution</text><text x="185" y="55" fill="#fff" font-weight="900">78%</text><rect y="69" width="215" height="10" rx="5" fill="#0a3041" stroke="#6fffe9" stroke-opacity=".25"/><rect y="69" width="168" height="10" rx="5" fill="url(#green)"/>
+      <text y="110">Risk model</text><text x="185" y="110" fill="#fff" font-weight="900">66%</text><rect y="124" width="215" height="10" rx="5" fill="#0a3041" stroke="#6fffe9" stroke-opacity=".25"/><rect y="124" width="142" height="10" rx="5" fill="url(#green)"/>
+    </g>
+    <g transform="translate(32 465)">
+      <rect x="0" y="-90" width="215" height="110" rx="16" fill="#082638" stroke="#6fffe9" stroke-opacity=".28"/>
+      <rect x="20" y="-54" width="24" height="54" rx="6" fill="#38e8ff"/><rect x="65" y="-32" width="24" height="32" rx="6" fill="#67a7cc"/><rect x="110" y="-76" width="24" height="76" rx="6" fill="#20c7ff"/><rect x="155" y="-58" width="24" height="58" rx="6" fill="#67a7cc"/>
+    </g>
+  </g>
+</svg>
